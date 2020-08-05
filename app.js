@@ -5,8 +5,21 @@ document.addEventListener('DOMContentLoaded', function () {
     var ground = document.querySelector('.ground');
     var birdLeft = 220;
     var birdBottom = 100;
+    var gravity = 2;
     function startGame() {
-        bird.style.bottom = birdBottom + 'px';
+        birdBottom -= gravity;
+        bird.style.bottom = birdBottom + "px";
+        bird.style.left = birdLeft + "px";
     }
-    startGame();
+    var timerId = setInterval(startGame, 20);
+    function jump() {
+        if (birdBottom < 495)
+            birdBottom += 50;
+        bird.style.bottom = birdBottom + "px";
+    }
+    document.addEventListener('keyup', function (event) {
+        if (event.code === 'Space') {
+            jump();
+        }
+    });
 });
