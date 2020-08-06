@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var ground = document.querySelector('.ground');
     var birdLeft = 220;
     var birdBottom = 100;
-    var gravity = 2;
+    var gravity = 3;
     var isGameOver = false;
-    var gap = 450;
+    var gap = 430;
     function startGame() {
         birdBottom -= gravity;
         bird.style.bottom = birdBottom + "px";
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('keyup', control);
     function generateObstacle() {
         var obstacleLeft = 500;
-        var randomHeight = Math.random() * 70;
+        var randomHeight = Math.random() * 110;
         var obstacleBottom = randomHeight;
         var obstacle = document.createElement('div');
         var topObstacle = document.createElement('div');

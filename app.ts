@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let birdLeft: number = 220;
   let birdBottom: number = 100;
-  let gravity: number = 2;
+  let gravity: number = 3;
   let isGameOver: boolean = false;
-  let gap: number = 450;
+  let gap: number = 430;
 
   function startGame() {
     birdBottom -= gravity;
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function generateObstacle() {
     let obstacleLeft: number = 500;
-    let randomHeight = Math.random() * 70;
+    let randomHeight = Math.random() * 110;
     let obstacleBottom: number = randomHeight;
 
     const obstacle = document.createElement('div');
